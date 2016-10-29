@@ -1,0 +1,8 @@
+You will read a text file. Then create another text file containing only the number of words in the first file.
+Example:
+Say input file is input.txt, and it contains the following two lines:
+This is a test program.
+I am counting only words.
+Output:
+Say, the created file is output.txt, and it contains:
+10
