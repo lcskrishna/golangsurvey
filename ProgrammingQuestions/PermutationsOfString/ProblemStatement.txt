@@ -1,0 +1,9 @@
+Print all the possible permutations of a String
+Example:
+Input: abc
+Ouptut: abc
+        acb
+        bac
+        bca
+        cab
+        cba

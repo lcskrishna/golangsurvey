@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Three of a crime</title>
+</head>
+<body>
+	<div align="center">
+	<h1>Welcome to the Game</h1>
+	<br>
+	<table border="1px solid black;">
+		<tr>
+			<th> Index </th>
+			<th> 0 </th>
+			<th> 1 </th>
+			<th> 2 </th>
+			<th> 3 </th>
+			<th> 4 </th>
+			<th> 5 </th>
+			<th> 6 </th>
+		<tr>
+		<tr>
+			<th> Criminals </th>
+			{{range .criminals}}
+			<th>  {{.}}  </th>
+			{{end}}
+		</tr>
+		<tr>
+			<th> Random Criminals </th>
+	{{range .randomCriminals}}
+		{{if eq . "0" }}
+			<th>  No  </th>
+		{{else}}
+			<th>  Yes  </th>
+		{{end}}
+	{{end}}
+		</tr>
+	</table>
+	<br>
+	total perpetrators {{ .totalPerpetrators}} <br>
+	Enter Index value corresponding to the Criminals you think are the Perpatrators<br>
+	Else Press pass to and ask other player to guess
+	<form action="/game/" method="post">
+		<input type="number" min="0" max="6" name="value1">
+		<input type="number" min="0" max="6" name="value2">
+		<input type="number" min="0" max="6" name="value3"><br>
+		<input type="submit" min="0" max="6" value="Hit Answer">
+	</form>
+	<form action="/pass/" method="post">
+		<input type="submit" value="Pass">
+	</form>
+
+	Win Status 
+	{{ range .winStatus }}
+		{{if eq . "No" }} 
+			No 
+		{{else}}
+			You Won, Press Pass to start new game.
+		{{end}}
+	{{end}}
+
+	</div>
+</body>
+</html>
